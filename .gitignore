@@ -1,17 +1,33 @@
+# Ignore Android Studio project files
 *.iml
-.gradle
-/local.properties
+.idea/
+*.DS_Store
+
+# Ignore local configuration
+local.properties
+
+# Ignore Gradle files
+.gradle/
+build/
+
+# Ignore captures (for screenshots or debugging)
+captures/
+
+# Ignore NDK-related files
+.externalNativeBuild/
+.cxx/
+
+# Ignore dependency caches
 /.idea/caches
 /.idea/libraries
 /.idea/modules.xml
 /.idea/workspace.xml
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
+
+# Ignore OS-specific files
 .DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
-local.properties
-*.DS_Store
-*.DS_Store
+
+# Ignore generated files
+/.gradle/
+/build/
