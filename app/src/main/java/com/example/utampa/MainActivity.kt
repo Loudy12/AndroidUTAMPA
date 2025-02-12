@@ -18,7 +18,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.utampa.ui.theme.UtampaTheme
 import com.example.utampa.screens.CampusScreen
 import com.example.utampa.screens.ResourcesScreen
-import com.example.utampa.screens.ForYouScreen
 import com.example.utampa.screens.ProfileScreen
 
 
@@ -36,7 +35,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun BottomNavBarApp() {
-    var selectedItem by remember { mutableStateOf(0) }
+    var selectedItem by remember { mutableIntStateOf(0) }
 
     val items = listOf("For You", "Campus", "Resources", "Profile")
     val icons = listOf(
