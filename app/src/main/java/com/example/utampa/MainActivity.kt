@@ -18,7 +18,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.utampa.ui.theme.UtampaTheme
 import com.example.utampa.screens.CampusScreen
 import com.example.utampa.screens.ResourcesScreen
-import com.example.utampa.screens.ProfileScreen
 
 
 class MainActivity : ComponentActivity() {
