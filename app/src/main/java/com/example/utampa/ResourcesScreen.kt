@@ -1,4 +1,4 @@
-package com.example.utampa.screens
+package com.example.utampa
 
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
