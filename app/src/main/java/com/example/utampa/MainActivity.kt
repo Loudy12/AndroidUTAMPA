@@ -16,25 +16,75 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.utampa.ui.theme.UtampaTheme
-import com.example.utampa.screens.CampusScreen
-import com.example.utampa.screens.ResourcesScreen
+import android.content.Intent
+import android.util.Log
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.Text
+import androidx.compose.material.icons.filled.ExitToApp
+import androidx.compose.runtime.Composable
 
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Initialize Cognito
+        CognitoHelper.initCognito(this)
+        AWSIAMCredentialsManager.appContext = this
         enableEdgeToEdge()
         setContent {
             UtampaTheme {
-                BottomNavBarApp()
+                Scaffold(
+                    topBar = {
+                        SignOutTopAppBar(
+                            authController = AuthController.getInstance(this)
+                        )
+                    },
+                    content = { innerPadding ->
+                        Box(modifier = Modifier
+                            .fillMaxSize()
+                            .padding(innerPadding)) {
+                            UTampaApp()
+                        }
+                    }
+                )
             }
         }
     }
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+
+        intent.data?.let { uri ->
+            val uriString = uri.toString()
+            Log.d("MainActivity", "Received redirect URI: $uriString") // Debug log
+
+            // Extract all query parameters and log them
+            val queryParams = uri.queryParameterNames
+            for (param in queryParams) {
+                Log.d("MainActivity", "Query param: $param = ${uri.getQueryParameter(param)}")
+            }
+
+            // Check if "state" exists
+            val stateParam = uri.getQueryParameter("state")
+            if (stateParam == "logout") {
+                Log.d("MainActivity", "Ignoring logout redirect")
+                return
+            }
+
+            // Otherwise, handle login normally
+            AuthController.getInstance(this).handleOpenURL(uri)
+        }
+    }
+
+
 }
 
 @Composable
 fun BottomNavBarApp() {
-    var selectedItem by remember { mutableIntStateOf(0) }
+    var selectedItem by remember { mutableStateOf(0) }
 
     val items = listOf("For You", "Campus", "Resources", "Profile")
     val icons = listOf(
@@ -72,6 +122,17 @@ fun BottomNavBarApp() {
             }
         }
     }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun SignOutTopAppBar(
+    authController: AuthController,
+    title: String = "UTampa",
+    modifier: Modifier = Modifier,
+    onSignOut: () -> Unit = {}
+) {
+
 }
 
 @Preview(showBackground = true)
