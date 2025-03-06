@@ -1,5 +1,6 @@
-package com.example.utampa
+package com.example.utampa.AWS
 
+import com.example.utampa.UtampaApplication
 import java.net.URL
 
 /**

@@ -1,4 +1,4 @@
-package com.example.utampa
+package com.example.utampa.ui.theme.pages
 
 import android.net.Uri
 import android.widget.Toast
@@ -25,6 +25,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.rememberAsyncImagePainter
+import com.example.utampa.R
 import com.example.utampa.data.User
 import kotlinx.coroutines.delay
 

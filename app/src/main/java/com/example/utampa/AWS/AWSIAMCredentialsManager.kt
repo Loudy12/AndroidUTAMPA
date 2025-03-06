@@ -1,4 +1,4 @@
-package com.example.utampa
+package com.example.utampa.AWS
 import android.content.Context
 import android.util.Log
 import com.amazonaws.auth.AWSCredentials
