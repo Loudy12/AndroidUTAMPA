@@ -1,4 +1,4 @@
-package com.example.utampa
+package com.example.utampa.ui.theme.pages
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -19,11 +19,12 @@ import com.example.utampa.ui.theme.UtampaTheme
 import android.content.Intent
 import android.util.Log
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.Text
-import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.runtime.Composable
+import com.example.utampa.AWS.AWSIAMCredentialsManager
+import com.example.utampa.AWS.AuthController
+import com.example.utampa.AWS.CognitoHelper
+import com.example.utampa.UTampaApp
 
 
 class MainActivity : ComponentActivity() {
@@ -84,7 +85,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun BottomNavBarApp() {
-    var selectedItem by remember { mutableStateOf(0) }
+    var selectedItem by remember { mutableIntStateOf(0) }
 
     val items = listOf("For You", "Campus", "Resources", "Profile")
     val icons = listOf(

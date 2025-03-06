@@ -5,6 +5,11 @@ import androidx.compose.ui.platform.LocalContext
 import kotlinx.coroutines.delay
 import androidx.compose.runtime.livedata.observeAsState
 import android.util.Log
+import com.example.utampa.AWS.AuthController
+import com.example.utampa.AWS.UserAttributesFetcher
+import com.example.utampa.ui.theme.pages.BottomNavBarApp
+import com.example.utampa.ui.theme.pages.LoadingView
+import com.example.utampa.ui.theme.pages.SignInScreen
 
 @Composable
 fun UTampaApp(

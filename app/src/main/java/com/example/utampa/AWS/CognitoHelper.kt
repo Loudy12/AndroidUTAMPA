@@ -1,12 +1,9 @@
-package com.example.utampa
+package com.example.utampa.AWS
 
 
 import android.content.Context
-import com.amazonaws.auth.AWSBasicCognitoIdentityProvider
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserPool
 import com.amazonaws.regions.Regions
-import com.amazonaws.services.cognitoidentityprovider.AmazonCognitoIdentityProviderClient
-import com.amazonaws.services.cognitoidentityprovider.model.AuthFlowType
 
 object CognitoHelper {
     private const val CLIENT_ID = "287a4e53vrj0anmdl03bupqa5n"

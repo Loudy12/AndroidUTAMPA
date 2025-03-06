@@ -1,4 +1,4 @@
-package com.example.utampa
+package com.example.utampa.AWS
 import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
@@ -24,18 +24,11 @@ import java.security.SecureRandom
 import java.text.SimpleDateFormat
 import java.util.*
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserCodeDeliveryDetails
 import com.amazonaws.services.cognitoidentityprovider.model.SignUpResult
 import android.content.Intent
 
 
-import com.example.utampa.AWSIAMCredentialsManager  // Ensure this path matches your project structure
-import com.example.utampa.AWSIAMCredentialsManager.appContext
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import java.net.HttpURLConnection
-import java.net.URL
+import com.example.utampa.AWS.AWSIAMCredentialsManager.appContext
 
 
 class AuthController private constructor(private val context: Context) {

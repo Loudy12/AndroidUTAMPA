@@ -1,4 +1,4 @@
-package com.example.utampa
+package com.example.utampa.AWS
 
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.Request

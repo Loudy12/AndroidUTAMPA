@@ -1,6 +1,6 @@
-package com.example.utampa
+package com.example.utampa.AWS
 
-import com.example.utampa.AWSSigner.SigningData.Companion.hashedPayload
+import com.example.utampa.AWS.AWSSigner.SigningData.Companion.hashedPayload
 import java.net.URL
 import java.net.URLEncoder
 import java.nio.charset.StandardCharsets
@@ -204,7 +204,7 @@ class AWSSigner(
 
         companion object {
             fun hashedPayload(body: BodyData?): String {
-                if (body == null) return AWSSigner.hashedEmptyBody
+                if (body == null) return hashedEmptyBody
                 return when (body) {
                     is BodyData.StringBody -> sha256Hex(body.text.toByteArray(StandardCharsets.UTF_8))
                     is BodyData.DataBody -> sha256Hex(body.data)
