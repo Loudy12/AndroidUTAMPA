@@ -99,5 +99,13 @@ dependencies {
     implementation("androidx.compose.material3:material3:1.3.1")
     implementation("androidx.lifecycle:lifecycle-runtime-compose:2.8.7")
     implementation("androidx.navigation:navigation-compose:2.8.7")
+
+
+    implementation("com.google.android.gms:play-services-maps:18.1.0")
+    implementation("com.google.android.gms:play-services-location:21.0.1")
+    implementation("com.google.maps.android:maps-compose:2.11.4") // Latest version
+    implementation("com.google.android.gms:play-services-maps:18.2.0") // Maps SDK
+
+    implementation("com.google.android.material:material:1.9.0")
 }
 
