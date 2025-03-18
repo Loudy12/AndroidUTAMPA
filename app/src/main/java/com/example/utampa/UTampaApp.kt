@@ -1,15 +1,20 @@
 package com.example.utampa
 
-import androidx.compose.runtime.*
-import androidx.compose.ui.platform.LocalContext
-import kotlinx.coroutines.delay
-import androidx.compose.runtime.livedata.observeAsState
 import android.util.Log
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.platform.LocalContext
 import com.example.utampa.AWS.AuthController
 import com.example.utampa.AWS.UserAttributesFetcher
 import com.example.utampa.ui.theme.pages.BottomNavBarApp
 import com.example.utampa.ui.theme.pages.LoadingView
 import com.example.utampa.ui.theme.pages.SignInScreen
+import kotlinx.coroutines.delay
 
 @Composable
 fun UTampaApp(
@@ -52,8 +57,11 @@ fun UTampaApp(
                     }
                 }
             }
-            // Display your main UI.
-            BottomNavBarApp()
+            // Initialize NavController
+
+
+            // Display your main UI with BottomNavBarApp
+            BottomNavBarApp() // Pass navController here
         }
     }
 }
