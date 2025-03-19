@@ -3,7 +3,9 @@ package com.example.utampa.ui.theme.guestview
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -14,10 +16,13 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -26,7 +31,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -41,9 +46,11 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.testing.TestNavHostController
 import com.example.utampa.R
-import androidx.compose.material3.ButtonDefaults
+import com.example.utampa.data.FavoriteSpotsData
 import com.example.utampa.ui.theme.TampaRed
-
+import com.example.utampa.ui.theme.components.CombineRowParkingCards
+import com.example.utampa.ui.theme.components.FavoriteSpotsWidget
+import com.example.utampa.ui.theme.components.GuestParkingWidget
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -52,7 +59,7 @@ fun GuestForYou(navController: NavController) {
     val context = LocalContext.current
 
     Scaffold(topBar = {
-        TopAppBar(title = { Text("Welcome to The University of Tampa!") }) //center this and change text
+        TopAppBar(title = { Text("Welcome to The University of Tampa!") }) // Center and style as needed
     }) { paddingValues ->
         Column(
             modifier = Modifier
@@ -61,18 +68,45 @@ fun GuestForYou(navController: NavController) {
                 .padding(paddingValues)
                 .padding(16.dp)
         ) {
+            // *** Favorite Spots Section ***
+            Spacer(modifier = Modifier.height(16.dp))
+            Text(
+                text = "Favorite Spots",
+                fontSize = 22.sp,
+                fontWeight = FontWeight.Bold
+            )
+            Spacer(modifier = Modifier.height(8.dp))
+
+            // *** Fix: Move the data inside the Composable function ***
+            val spots = FavoriteSpotsData.spots
+
+            LazyRow {
+                items(spots) { spot ->
+                    FavoriteSpotsWidget(spot)
+                }
+            }
+            Spacer(modifier = Modifier.height(16.dp)) // Space before the next sections
+
+
             TourSection(context)
             Spacer(modifier = Modifier.height(16.dp))
-            ParkingSection(navController, context) //needs nav
+            Text(
+                text = "Parking Garages & Passes",
+                fontSize = 22.sp,
+                fontWeight = FontWeight.Bold
+            )
+            Spacer(modifier = Modifier.height(8.dp))
+            //GuestParkingWidget()
+            //Spacer(modifier = Modifier.height(16.dp))
+            CombineRowParkingCards()
             Spacer(modifier = Modifier.height(16.dp))
-            AroundTampaBaySection(navController) // needs nav
-            Spacer(modifier = Modifier.height(16.dp))
-            StudentsFavoriteSpotsWidget()
+            AroundTampaBaySection(navController)
             Spacer(modifier = Modifier.height(16.dp))
             VisitTipsFAQWidget()
         }
     }
 }
+
 
 @Composable
 fun TourSection(context: Context) {
@@ -135,7 +169,7 @@ fun AroundTampaBaySection(navController: NavController) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .background(Color.LightGray, RoundedCornerShape(12.dp))
+            .border(BorderStroke(2.dp, Color.Gray), RoundedCornerShape(12.dp)) // Add border
             .clickable { navController.navigate("aroundTampaBay") }
             .padding(16.dp)
     ) {
@@ -179,7 +213,7 @@ fun VisitTipsFAQWidget() {
         "What facilities can visitors use?" to "Visitors are welcome in public areas on campus."
     )
 
-    var expandedIndex by remember { mutableStateOf(-1) }
+    var expandedIndex by remember { mutableIntStateOf(-1) }
 
     Column(modifier = Modifier.padding(16.dp)) {
         Text("Frequently Asked Questions", fontSize = 20.sp, fontWeight = FontWeight.Bold)
@@ -195,26 +229,6 @@ fun VisitTipsFAQWidget() {
     }
 }
 
-@Composable
-fun StudentsFavoriteSpotsWidget() {
-    Column(modifier = Modifier.padding(16.dp)) {
-        Text("Student's Favorite Spots", fontSize = 20.sp, fontWeight = FontWeight.Bold)
-        val spots = listOf(
-            "Plant Hall" to "Historic landmark and architectural gem.",
-            "Fitness Center" to "Hub of campus life with dining and study lounges.",
-            "Sykes Chapel" to "Peaceful retreat for reflection and performances.",
-            "The Riverwalk" to "Enjoy scenic views along the Hillsborough River.",
-            "Riseman Aquatic Center" to "Showcasing artwork by students and faculty."
-        )
-        spots.forEach { spot ->
-            Row(modifier = Modifier.fillMaxWidth().padding(8.dp)) {
-                Text(spot.first, fontWeight = FontWeight.Bold)
-                Spacer(modifier = Modifier.weight(1f))
-                Text(spot.second, color = Color.Gray)
-            }
-        }
-    }
-}
 
 @Preview
 @Composable

@@ -8,23 +8,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.utampa.data.ParkingGarage
+import com.example.utampa.data.ParkingGarageDraw // Import the data source
+import com.example.utampa.data.ParkingGarage // Ensure correct import
 
-@Preview
 @Composable
 fun ParkingGarageWidget() {
-
-    val garages = listOf(
-        ParkingGarage("Thomas Garage", 75, "https://source.unsplash.com/300x200/?garage"),
-        ParkingGarage("West Garage", 60, "https://source.unsplash.com/300x201/?parking"),
-        ParkingGarage("Grand Garage", 90, "https://source.unsplash.com/300x202/?building"),
-        ParkingGarage("Delaware Garage", 40, "https://source.unsplash.com/300x203/?cars")
-    )
+    // Fetch garages from ParkingGarageDraw.kt
+    val garages: List<ParkingGarage> = ParkingGarageDraw.getParkingGarages()
 
     Column(modifier = Modifier.padding(16.dp)) {
         LazyRow {
             items(garages) { garage ->
-                ParkingGarageCard(garage = garage)
+                ParkingGarageCard(garage = garage) // Pass correct ParkingGarage object
             }
         }
     }
@@ -35,4 +30,3 @@ fun ParkingGarageWidget() {
 fun PreviewParkingGarageWidget() {
     ParkingGarageWidget()
 }
-
