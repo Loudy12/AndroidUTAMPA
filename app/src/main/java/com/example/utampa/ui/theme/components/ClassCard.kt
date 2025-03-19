@@ -54,7 +54,7 @@ fun ClassCard(courseId: Int) {
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Image(
-                    painter = painterResource(id = R.drawable.ic_bookmark), // ✅ Uses drawable
+                    painter = painterResource(id = R.drawable.ic_bookmark),
                     contentDescription = "Class Icon",
                     modifier = Modifier.size(24.dp)
                 )
