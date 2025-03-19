@@ -17,19 +17,28 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.utampa.ui.theme.UtampaTheme
 import android.content.Intent
+import android.os.Build
 import android.util.Log
+import androidx.annotation.RequiresApi
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.navigation.compose.rememberNavController
 import com.example.utampa.AWS.AWSIAMCredentialsManager
 import com.example.utampa.AWS.AuthController
 import com.example.utampa.AWS.CognitoHelper
 import com.example.utampa.UTampaApp
+import com.example.utampa.navigation.AppNavigation
 
 
 class MainActivity : ComponentActivity() {
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContent {
+            val navController = rememberNavController()
+            AppNavigation(navController)
+        }
 
         // Initialize Cognito
         CognitoHelper.initCognito(this)

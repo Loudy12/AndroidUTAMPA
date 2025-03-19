@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -15,7 +14,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
@@ -44,13 +42,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import androidx.navigation.testing.TestNavHostController
 import com.example.utampa.R
 import com.example.utampa.data.FavoriteSpotsData
 import com.example.utampa.ui.theme.TampaRed
 import com.example.utampa.ui.theme.components.CombineRowParkingCards
 import com.example.utampa.ui.theme.components.FavoriteSpotsWidget
-import com.example.utampa.ui.theme.components.GuestParkingWidget
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -59,7 +57,7 @@ fun GuestForYou(navController: NavController) {
     val context = LocalContext.current
 
     Scaffold(topBar = {
-        TopAppBar(title = { Text("Welcome to The University of Tampa!") }) // Center and style as needed
+        TopAppBar(title = { Text("Welcome to The University of Tampa!") })
     }) { paddingValues ->
         Column(
             modifier = Modifier
@@ -88,17 +86,19 @@ fun GuestForYou(navController: NavController) {
             Spacer(modifier = Modifier.height(16.dp)) // Space before the next sections
 
 
-            TourSection(context)
-            Spacer(modifier = Modifier.height(16.dp))
+
             Text(
                 text = "Parking Garages & Passes",
                 fontSize = 22.sp,
                 fontWeight = FontWeight.Bold
             )
-            Spacer(modifier = Modifier.height(8.dp))
+            CombineRowParkingCards(navController)
+            Spacer(modifier = Modifier.height(10.dp))
+            TourSection(context)
+            Spacer(modifier = Modifier.height(16.dp))
             //GuestParkingWidget()
             //Spacer(modifier = Modifier.height(16.dp))
-            CombineRowParkingCards()
+
             Spacer(modifier = Modifier.height(16.dp))
             AroundTampaBaySection(navController)
             Spacer(modifier = Modifier.height(16.dp))
@@ -113,11 +113,10 @@ fun TourSection(context: Context) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .background(Color.LightGray, RoundedCornerShape(12.dp))
-            .padding(16.dp),
+
 
     ) {
-        Text("Schedule a Tour", fontSize = 20.sp, fontWeight = FontWeight.Bold)
+        Text("Schedule a Tour", fontSize = 22.sp, fontWeight = FontWeight.Bold)
         Spacer(modifier = Modifier.height(12.dp))
         TourButton("Undergraduate Visit") {
             openUrl(context, "https://apply-undg.ut.edu/portal/officevisit") //link working
@@ -130,39 +129,6 @@ fun TourSection(context: Context) {
         }
     }
 }
-
-@Composable
-fun ParkingSection(navController: NavController, context: Context) {
-    Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .background(Color.LightGray, RoundedCornerShape(12.dp))
-            .padding(16.dp)
-    ) {
-        Text("Parking", fontSize = 20.sp, fontWeight = FontWeight.Bold)
-        Spacer(modifier = Modifier.height(12.dp))
-        Row {
-            Button(
-                onClick = { navController.navigate("parkingList") },
-                colors = ButtonDefaults.buttonColors(containerColor = TampaRed) // Apply TampaRed
-            ) {
-                Text("Parking Garages")
-            }
-            Spacer(modifier = Modifier.width(8.dp))
-            Button(
-                onClick = {
-                    openUrl(
-                        context,
-                        "https://www.ut.edu/about-ut/university-services/campus-safety/visitor-pass-form"
-                    )
-                },
-                colors = ButtonDefaults.buttonColors(containerColor = TampaRed) // Apply TampaRed
-            ) {
-                Text("Visitor Parking Pass", fontSize = 13.sp)
-            }
-        }
-    }
-    }
 
 @Composable
 fun AroundTampaBaySection(navController: NavController) {
@@ -191,8 +157,11 @@ fun TourButton(title: String, onClick: () -> Unit) {
         modifier = Modifier.fillMaxWidth(),
         colors = ButtonDefaults.buttonColors(containerColor = TampaRed)
 
+
     ) {
-        Text(title)
+        Text(title, fontSize = 18.sp)
+
+
     }
     Spacer(modifier = Modifier.height(8.dp))
 }
@@ -233,6 +202,6 @@ fun VisitTipsFAQWidget() {
 @Preview
 @Composable
 fun PreviewGuestForYou() {
-    val mockNavController = TestNavHostController(LocalContext.current)
+    val mockNavController = rememberNavController()
     GuestForYou(navController = mockNavController)
 }

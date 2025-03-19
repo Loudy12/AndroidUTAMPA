@@ -1,6 +1,5 @@
 package com.example.utampa.ui.theme.guestview
 
-import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
@@ -23,30 +22,31 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import coil.compose.rememberAsyncImagePainter
-import coil.compose.rememberImagePainter
 import com.example.utampa.R
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 import com.example.utampa.ui.theme.TampaRed
 
 @RequiresApi(Build.VERSION_CODES.O)
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun GuestAroundTB() {
+fun GuestAroundTB(navController: NavHostController) {
     val events = remember { mutableStateListOf<Ticket>() }
 
-    // fake api req
+    // Fake API request
     LaunchedEffect(Unit) {
         fetchFakeTicketmasterEvents(events)
     }
 
-    GuestAroundTBContent(events)
+
+    GuestAroundTBContent(navController = navController, events = events)
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun GuestAroundTBContent(events: List<Ticket>) {
+fun GuestAroundTBContent(navController: NavHostController, events: List<Ticket>) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -59,7 +59,8 @@ fun GuestAroundTBContent(events: List<Ticket>) {
                     )
                 },
                 navigationIcon = {
-                    IconButton(onClick = { /* Navigate Back */ }) {
+
+                    IconButton(onClick = { navController.popBackStack() }) {
                         Icon(painter = painterResource(id = R.drawable.arrow_back), contentDescription = "Back")
                     }
                 }
@@ -75,7 +76,7 @@ fun GuestAroundTBContent(events: List<Ticket>) {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             if (events.isEmpty()) {
-                CircularProgressIndicator() // ✅ Show loading until data is available
+                CircularProgressIndicator()
             } else {
                 events.forEach { event ->
                     TicketCard(event = event)
@@ -136,7 +137,6 @@ fun TicketCard(event: Ticket) {
 
         Button(
             onClick = {
-
                 val intent = Intent(Intent.ACTION_VIEW, Uri.parse(event.url))
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 context.startActivity(intent)
@@ -147,7 +147,6 @@ fun TicketCard(event: Ticket) {
         }
     }
 }
-
 
 @RequiresApi(Build.VERSION_CODES.O)
 suspend fun fetchFakeTicketmasterEvents(events: MutableList<Ticket>) {
@@ -181,7 +180,7 @@ suspend fun fetchFakeTicketmasterEvents(events: MutableList<Ticket>) {
     events.addAll(fakeEvents)
 }
 
-// ✅ Mock Data Models (No real API needed)
+
 data class Ticket(
     val name: String,
     val startDateTime: String,
@@ -196,13 +195,12 @@ data class TicketLocation(
     val venue: String
 )
 
-
 @RequiresApi(Build.VERSION_CODES.O)
 @Preview
 @Composable
 fun PreviewGuestAroundTB() {
+    val previewNavController = rememberNavController() // fake api pull for now
     val previewEvents = remember { mutableStateListOf<Ticket>() }
-
 
     LaunchedEffect(Unit) {
         previewEvents.clear()
@@ -233,5 +231,5 @@ fun PreviewGuestAroundTB() {
         )
     }
 
-    GuestAroundTBContent(previewEvents)
+    GuestAroundTBContent(navController = previewNavController, events = previewEvents)
 }
