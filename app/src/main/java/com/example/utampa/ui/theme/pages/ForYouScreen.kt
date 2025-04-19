@@ -22,19 +22,20 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.utampa.R
 import com.example.utampa.data.NewsItem
-import com.example.utampa.ui.components.CanvasWidget
+import com.example.utampa.ui.theme.components.CanvasWidget
 import com.example.utampa.ui.theme.components.NewsWidget
 import com.example.utampa.ui.theme.components.ParkingGarageWidget
 import com.example.utampa.ui.theme.defBackground
+import androidx.navigation.NavController
+import androidx.compose.foundation.clickable
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ForYouScreen() {
+fun ForYouScreen(navController: NavController) {
     val newsList = listOf(
         NewsItem("UTampa Wins!", "The University of Tampa secures the first place!", "https://source.unsplash.com/random/300x200"),
         NewsItem("New Research at UT", "Scientists discover innovative technology.", "https://source.unsplash.com/random/300x201"),
@@ -87,9 +88,18 @@ fun ForYouScreen() {
             item {
                 Text("Parking Garages", fontSize = 20.sp, fontWeight = FontWeight.Bold)
                 Spacer(modifier = Modifier.height(8.dp))
-                ParkingGarageWidget()
+
+                Column(modifier = Modifier
+                    .clickable {
+                        navController.navigate("parking_screen")
+                    }
+                ) {
+                    ParkingGarageWidget()
+                }
+
                 Spacer(modifier = Modifier.height(24.dp))
             }
+
 
             // Classes Section
             item {
@@ -101,8 +111,4 @@ fun ForYouScreen() {
     }
 }
 
-@Preview
-@Composable
-fun PreviewForYouScreen() {
-    ForYouScreen()
-}
+

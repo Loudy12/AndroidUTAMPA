@@ -1,0 +1,51 @@
+[
+  {
+    "id": "0001",
+    "name": "Thomas Parking Garage",
+    "abbreviation": "TPG",
+    "type": "Parking",
+    "description": "Central parking garage accessible for students, faculty, and staff.",
+    "imageName": "thomasparkinggarage",
+    "coordinates": {
+      "longitude": -82.464501,
+      "latitude": 27.947501
+    }
+  },
+  {
+    "id": "0002",
+    "name": "West Parking Garage",
+    "abbreviation": "WPG",
+    "type": "Parking",
+    "description": "Parking facility on the western side of campus serving adjacent facilities.",
+    "imageName": "westparkinggarage",
+    "coordinates": {
+      "longitude": -82.464602,
+      "latitude": 27.947602
+    }
+  },
+  {
+    "id": "0003",
+    "name": "Delaware Parking Garage",
+    "abbreviation": "DPG",
+    "type": "Parking",
+    "description": "Parking garage near athletic and recreational facilities.",
+    "imageName": "delawareparkinggarage",
+    "coordinates": {
+      "longitude": -82.464703,
+      "latitude": 27.947703
+    }
+  },
+  {
+    "id": "0004",
+    "name": "Grand Central Parking Garage",
+    "abbreviation": "GCPG",
+    "type": "Parking",
+    "description": "Parking structure supporting nearby residential and academic buildings.",
+    "imageName": "grandcenter",
+    "coordinates": {
+      "longitude": -82.464804,
+      "latitude": 27.947804
+    }
+  }
+]
+

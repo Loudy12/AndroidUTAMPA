@@ -9,15 +9,18 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
+import androidx.navigation.NavController
 import com.example.utampa.AWS.AuthController
 import com.example.utampa.AWS.UserAttributesFetcher
-import com.example.utampa.ui.theme.pages.BottomNavBarApp
+//import com.example.utampa.ui.theme.pages.BottomNavBarApp
 import com.example.utampa.ui.theme.pages.LoadingView
 import com.example.utampa.ui.theme.pages.SignInScreen
 import kotlinx.coroutines.delay
 
 @Composable
 fun UTampaApp(
+
+    navController: NavController, // ✅ Now accepts NavController
     authController: AuthController = AuthController.getInstance(LocalContext.current)
 ) {
     // Local state to simulate a loading screen for at least 2 seconds.
@@ -57,11 +60,10 @@ fun UTampaApp(
                     }
                 }
             }
-            // Initialize NavController
-
-
-            // Display your main UI with BottomNavBarApp
-            BottomNavBarApp() // Pass navController here
+            // ✅ Now passes navController to BottomNavBarApp for proper navigation
+            // BottomNavBarApp(navController)
         }
     }
 }
+
+

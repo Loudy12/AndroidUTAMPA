@@ -57,15 +57,3 @@ fun NewsCard(news: NewsItem) {
     }
 }
 
-@Preview
-@Composable
-fun PreviewNewsWidget() {
-    val sampleNews = listOf(
-        NewsItem("UTampa Wins Championship", "The University of Tampa secures the first place!", "https://source.unsplash.com/random/300x200"),
-        NewsItem("New Research at UT", "Scientists discover innovative technology.", "https://source.unsplash.com/random/300x201"),
-        NewsItem("Campus Expansion", "UT to add new buildings and dorms!", "https://source.unsplash.com/random/300x202")
-    )
-
-    NewsWidget(sampleNews)
-}
-

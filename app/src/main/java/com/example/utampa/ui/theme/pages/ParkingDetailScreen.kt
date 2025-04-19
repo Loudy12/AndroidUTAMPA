@@ -27,13 +27,14 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.TopAppBar
 import androidx.navigation.NavController
+import com.example.utampa.models.Parking
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun BuildingDetailScreen(navController: NavController,
-                         building: Building,
-                         onBack: () -> Unit
+fun ParkingDetailScreen(navController: NavController,
+                        parking: Parking,
+                        onBack: () -> Unit
 ) {
     val context = LocalContext.current
     val configuration = LocalConfiguration.current
@@ -45,7 +46,7 @@ fun BuildingDetailScreen(navController: NavController,
                 title = {
                     // Uses building.name with titleLarge typography style
                     Text(
-                        text = building.name,
+                        text = parking.name,
                         style = MaterialTheme.typography.titleLarge
                     )
                 },
@@ -78,8 +79,8 @@ fun BuildingDetailScreen(navController: NavController,
             // - align(Alignment.CenterHorizontally) centers the image.
             // - Added top padding so that the image doesn't start flush at the very top.
             Image(
-                painter = painterResource(id = building.getImageResId(context)),
-                contentDescription = building.name,
+                painter = painterResource(id = parking.getImageResId(context)),
+                contentDescription = parking.name,
                 contentScale = ContentScale.Crop, // Adjust scaling as desired (Crop maintains aspect ratio and fills space)
                 modifier = Modifier
                     .fillMaxWidth(0.95f) // Changed from fillMaxWidth() to leave gaps on the sides

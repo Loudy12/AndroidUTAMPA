@@ -111,8 +111,4 @@ fun ParkingPassWidget(onClick: () -> Unit) {
     }
 }
 
-@Preview
-@Composable
-fun PreviewParkingPassWidget() {
-    ParkingPassWidget(onClick = {})
-}
+

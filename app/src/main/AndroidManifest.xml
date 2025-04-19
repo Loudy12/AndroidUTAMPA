@@ -13,9 +13,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/utlogo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/utlogo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Utampa"
         tools:targetApi="31">
@@ -26,7 +26,7 @@
 
         <!-- Declare MainActivity as your launcher activity -->
         <activity
-            android:name=".ui.theme.pages.MainActivity"
+            android:name=".ui.theme.pages.SignInActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Utampa"
@@ -51,5 +51,8 @@
             android:name=".ui.theme.pages.MapsActivity"
             android:theme="@style/Theme.Utampa">
         </activity>
+        <activity android:name=".ui.theme.pages.MainActivity" />
+        <activity android:name=".ui.theme.pages.GuestActivity"/>
+
     </application>
 </manifest>

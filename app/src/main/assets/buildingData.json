@@ -1,0 +1,482 @@
+[
+  {
+    "id": "0001",
+    "name": "Austin Hall",
+    "abbreviation": "AH",
+    "type": "Residential",
+    "description": "Residence hall with modern amenities for student housing.",
+    "imageName": "austinhall",
+    "coordinates": {
+      "longitude": -82.465101,
+      "latitude": 27.946101
+    }
+  },
+  {
+    "id": "0002",
+    "name": "Barrymore Hotel",
+    "abbreviation": "BH",
+    "type": "Hotel",
+    "description": "Off-campus hotel used for student housing and events.",
+    "imageName": "barrymorehotel",
+    "coordinates": {
+      "longitude": -82.465502,
+      "latitude": 27.946702
+    }
+  },
+  {
+    "id": "0003",
+    "name": "Brevard Hall",
+    "abbreviation": "BRH",
+    "type": "Residential",
+    "description": "Student residence hall with communal living spaces and study areas.",
+    "imageName": "brevardhall",
+    "coordinates": {
+      "longitude": -82.465303,
+      "latitude": 27.946303
+    }
+  },
+  {
+    "id": "0004",
+    "name": "Grand Center",
+    "abbreviation": "GC",
+    "type": "Academic",
+    "description": "Center for arts and communication, housing studios and classrooms.",
+    "imageName": "grandcenter",
+    "coordinates": {
+      "longitude": -82.465704,
+      "latitude": 27.946904
+    }
+  },
+  {
+    "id": "0005",
+    "name": "Jenkins Hall",
+    "abbreviation": "JH",
+    "type": "Residential",
+    "description": "Residence hall featuring modern suites for upperclassmen students.",
+    "imageName": "jenkinshall",
+    "coordinates": {
+      "longitude": -82.465105,
+      "latitude": 27.947005
+    }
+  },
+  {
+    "id": "0006",
+    "name": "McKay Hall",
+    "abbreviation": "MKH",
+    "type": "Residential",
+    "description": "Historic residence hall known for its traditional architecture.",
+    "imageName": "mckayhall",
+    "coordinates": {
+      "longitude": -82.465606,
+      "latitude": 27.947206
+    }
+  },
+  {
+    "id": "0007",
+    "name": "Morsani Hall",
+    "abbreviation": "MH",
+    "type": "Residential",
+    "description": "Student housing located near the center of campus.",
+    "imageName": "morsanihall",
+    "coordinates": {
+      "longitude": -82.465307,
+      "latitude": 27.947307
+    }
+  },
+  {
+    "id": "0008",
+    "name": "Palm Apartments",
+    "abbreviation": "PA",
+    "type": "Residential",
+    "description": "Apartment-style student housing with private kitchens and baths.",
+    "imageName": "palmapartments",
+    "coordinates": {
+      "longitude": -82.465108,
+      "latitude": 27.947408
+    }
+  },
+  {
+    "id": "0009",
+    "name": "Smiley Hall",
+    "abbreviation": "SH",
+    "type": "Residential",
+    "description": "Residence hall with modern amenities and study spaces.",
+    "imageName": "smileyhall",
+    "coordinates": {
+      "longitude": -82.465209,
+      "latitude": 27.947509
+    }
+  },
+  {
+    "id": "0010",
+    "name": "Straz Hall",
+    "abbreviation": "SH",
+    "type": "Academic",
+    "description": "Building with classrooms and lecture halls.",
+    "imageName": "strazhall",
+    "coordinates": {
+      "longitude": -82.465310,
+      "latitude": 27.947610
+    }
+  },
+  {
+    "id": "0011",
+    "name": "Urso Hall",
+    "abbreviation": "UH",
+    "type": "Residential",
+    "description": "Residence hall with modern student living areas.",
+    "imageName": "ursohall",
+    "coordinates": {
+      "longitude": -82.465412,
+      "latitude": 27.947712
+    }
+  },
+  {
+    "id": "0012",
+    "name": "Vaughn Center",
+    "abbreviation": "VC",
+    "type": "Academic",
+    "description": "Building with classrooms and event spaces.",
+    "imageName": "vaughncenter",
+    "coordinates": {
+      "longitude": -82.465514,
+      "latitude": 27.947814
+    }
+  },
+  {
+    "id": "0013",
+    "name": "Benson Alex Riseman Fitness and Recreation Center",
+    "abbreviation": "FRC",
+    "type": "Recreational",
+    "description": "Fitness and recreation center with gym and workout spaces.",
+    "imageName": "risemanfitness",
+    "coordinates": {
+      "longitude": -82.465913,
+      "latitude": 27.947913
+    }
+  },
+  {
+    "id": "0014",
+    "name": "Cass Building",
+    "abbreviation": "CB",
+    "type": "Administrative",
+    "description": "Administrative building for campus services.",
+    "imageName": "cassbuilding",
+    "coordinates": {
+      "longitude": -82.466014,
+      "latitude": 27.948014
+    }
+  },
+  {
+    "id": "0015",
+    "name": "Martinez Athletic Center",
+    "abbreviation": "MAC",
+    "type": "Athletic",
+    "description": "Athletic center with facilities for university sports teams.",
+    "imageName": "martinezathleticcenter",
+    "coordinates": {
+      "longitude": -82.466115,
+      "latitude": 27.948115
+    }
+  },
+  {
+    "id": "0016",
+    "name": "Bailey Art Studio",
+    "abbreviation": "BAS",
+    "type": "Academic/Studio",
+    "description": "Art studio for creative and visual arts students.",
+    "imageName": "baileyartstudio",
+    "coordinates": {
+      "longitude": -82.466216,
+      "latitude": 27.948216
+    }
+  },
+  {
+    "id": "0017",
+    "name": "Daily Innovation and Collaboration Building (ICB)",
+    "abbreviation": "ICB",
+    "type": "Academic",
+    "description": "Building dedicated to innovation and collaborative projects.",
+    "imageName": "dailyinnovationbuilding",
+    "coordinates": {
+      "longitude": -82.466317,
+      "latitude": 27.948317
+    }
+  },
+  {
+    "id": "0018",
+    "name": "Dickey Health and Wellness Center",
+    "abbreviation": "HWC",
+    "type": "Health",
+    "description": "Center providing health and wellness services for students.",
+    "imageName": "dickeyhealthwellness",
+    "coordinates": {
+      "longitude": -82.466418,
+      "latitude": 27.948418
+    }
+  },
+  {
+    "id": "0019",
+    "name": "Faculty and Staff Offices",
+    "abbreviation": "FSO",
+    "type": "Administrative",
+    "description": "Building housing offices for university faculty and staff.",
+    "imageName": "facultyoffices",
+    "coordinates": {
+      "longitude": -82.466519,
+      "latitude": 27.948519
+    }
+  },
+  {
+    "id": "0020",
+    "name": "Falk Theatre",
+    "abbreviation": "FALK",
+    "type": "Theater",
+    "description": "Theater for performances and university events.",
+    "imageName": "falktheatre",
+    "coordinates": {
+      "longitude": -82.466620,
+      "latitude": 27.948620
+    }
+  },
+  {
+    "id": "0021",
+    "name": "Ferman Center forc the Arts",
+    "abbreviation": "FCA",
+    "type": "Arts",
+    "description": "Center for fine arts, featuring studios and performance spaces.",
+    "imageName": "fermanartscenter",
+    "coordinates": {
+      "longitude": -82.466721,
+      "latitude": 27.948721
+    }
+  },
+  {
+    "id": "0022",
+    "name": "Jenkins Health and Technology Building",
+    "abbreviation": "JHT",
+    "type": "Academic",
+    "description": "Building for health sciences and technology programs.",
+    "imageName": "jenkinshealthtechnology",
+    "coordinates": {
+      "longitude": -82.466822,
+      "latitude": 27.948822
+    }
+  },
+  {
+    "id": "0023",
+    "name": "Graduate Health Studies (GHS Building)",
+    "abbreviation": "GHS",
+    "type": "Academic",
+    "description": "Building for graduate programs in health sciences.",
+    "imageName": "graduatehealthstudies",
+    "coordinates": {
+      "longitude": -82.466923,
+      "latitude": 27.948923
+    }
+  },
+  {
+    "id": "0024",
+    "name": "Health Science and Human Performances Building (HSHP)",
+    "abbreviation": "HSHP",
+    "type": "Academic/Health",
+    "description": "Building for health science and human performance programs.",
+    "imageName": "healthperformances",
+    "coordinates": {
+      "longitude": -82.467024,
+      "latitude": 27.949024
+    }
+  },
+  {
+    "id": "0025",
+    "name": "Henry B. Plant Hall",
+    "abbreviation": "HPH",
+    "type": "Historic/Academic",
+    "description": "Historic building housing academic departments and classrooms.",
+    "imageName": "henryplant",
+    "coordinates": {
+      "longitude": -82.467125,
+      "latitude": 27.949125
+    }
+  },
+  {
+    "id": "0026",
+    "name": "Kennedy/Boulevard Building (KBB)",
+    "abbreviation": "KBB",
+    "type": "Administrative",
+    "description": "Building housing offices and university administration.",
+    "imageName": "kennedybuilding",
+    "coordinates": {
+      "longitude": -82.467226,
+      "latitude": 27.949226
+    }
+  },
+  {
+    "id": "0027",
+    "name": "Krusen Building",
+    "abbreviation": "KB",
+    "type": "Administrative",
+    "description": "Building for various administrative offices.",
+    "imageName": "krusenbuilding",
+    "coordinates": {
+      "longitude": -82.467327,
+      "latitude": 27.949327
+    }
+  },
+  {
+    "id": "0028",
+    "name": "Little School House",
+    "abbreviation": "LSH",
+    "type": "Historic",
+    "description": "Historic building used for small classes and community events.",
+    "imageName": "littleschoolhouse",
+    "coordinates": {
+      "longitude": -82.467428,
+      "latitude": 27.949428
+    }
+  },
+  {
+    "id": "0029",
+    "name": "Macdonald Kelce Library",
+    "abbreviation": "LIV",
+    "type": "Library",
+    "description": "University library with study spaces and research resources.",
+    "imageName": "macdonaldkelcelibrary",
+    "coordinates": {
+      "longitude": -82.467529,
+      "latitude": 27.949529
+    }
+  },
+  {
+    "id": "0030",
+    "name": "MacKechnie Building",
+    "abbreviation": "MKE",
+    "type": "Academic",
+    "description": "Building housing classrooms and faculty offices.",
+    "imageName": "mackechniebuilding",
+    "coordinates": {
+      "longitude": -82.467630,
+      "latitude": 27.949630
+    }
+  },
+  {
+    "id": "0031",
+    "name": "North Central Energy Plant",
+    "abbreviation": "NCEP",
+    "type": "Utility",
+    "description": "Energy plant supplying power and utilities to campus.",
+    "imageName": "northcentralenergy",
+    "coordinates": {
+      "longitude": -82.467731,
+      "latitude": 27.949731
+    }
+  },
+  {
+    "id": "0032",
+    "name": "Plant Hall",
+    "abbreviation": "PH",
+    "type": "Academic",
+    "description": "Main academic building housing a variety of departments.",
+    "imageName": "planthall",
+    "coordinates": {
+      "longitude": -82.467832,
+      "latitude": 27.949832
+    }
+  },
+  {
+    "id": "0033",
+    "name": "Plant Hall - Science Wing",
+    "abbreviation": "PHSW",
+    "type": "Academic/Science",
+    "description": "Science wing of Plant Hall with laboratories and classrooms.",
+    "imageName": "planthallsciencewing",
+    "coordinates": {
+      "longitude": -82.467933,
+      "latitude": 27.949933
+    }
+  },
+  {
+    "id": "0034",
+    "name": "Schoomaker ROTC and Athletics Building",
+    "abbreviation": "SCHO",
+    "type": "Athletic/ROTC",
+    "description": "Building housing ROTC programs and athletic facilities.",
+    "imageName": "schoomakerbuilding",
+    "coordinates": {
+      "longitude": -82.468034,
+      "latitude": 27.950034
+    }
+  },
+  {
+    "id": "0035",
+    "name": "Science Annex",
+    "abbreviation": "SA",
+    "type": "Academic/Science",
+    "description": "Annex with classrooms and labs for science departments.",
+    "imageName": "scienceannex",
+    "coordinates": {
+      "longitude": -82.468135,
+      "latitude": 27.950135
+    }
+  },
+  {
+    "id": "0036",
+    "name": "Southard Family Building",
+    "abbreviation": "SFB",
+    "type": "Academic/Family",
+    "description": "Building with student services for families and academic departments.",
+    "imageName": "southardfamilybuilding",
+    "coordinates": {
+      "longitude": -82.468236,
+      "latitude": 27.950236
+    }
+  },
+  {
+    "id": "0037",
+    "name": "Sykes Chapel",
+    "abbreviation": "SC",
+    "type": "Chapel",
+    "description": "Chapel for religious services and special events.",
+    "imageName": "sykeschapel",
+    "coordinates": {
+      "longitude": -82.468337,
+      "latitude": 27.950337
+    }
+  },
+  {
+    "id": "0038",
+    "name": "Sykes College of Business",
+    "abbreviation": "JS",
+    "type": "Academic",
+    "description": "Building housing the College of Business administration and classrooms.",
+    "imageName": "sykescollegebusiness",
+    "coordinates": {
+      "longitude": -82.468438,
+      "latitude": 27.950438
+    }
+  },
+  {
+    "id": "0039",
+    "name": "Sykes Plaza and Susan and John Sykes Ars Sonora",
+    "abbreviation": "SP",
+    "type": "Plaza/Arts",
+    "description": "Plaza featuring art installations and open space.",
+    "imageName": "sykesplaza",
+    "coordinates": {
+      "longitude": -82.468539,
+      "latitude": 27.950539
+    }
+  },
+  {
+    "id": "0040",
+    "name": "Thompson Building",
+    "abbreviation": "TB",
+    "type": "Academic",
+    "description": "Building housing classrooms and faculty offices.",
+    "imageName": "thompsonbuilding",
+    "coordinates": {
+      "longitude": -82.468640,
+      "latitude": 27.950640
+    }
+  }
+]

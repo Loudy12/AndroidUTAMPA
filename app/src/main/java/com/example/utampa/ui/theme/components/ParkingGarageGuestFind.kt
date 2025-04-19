@@ -112,8 +112,3 @@ fun ParkingGarageGuestFind(onClick: () -> Unit) {
     }
 }
 
-@Preview
-@Composable
-fun PreviewParkingGarageGuestFind() {
-    ParkingGarageGuestFind(onClick = {})
-}

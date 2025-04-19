@@ -1,0 +1,184 @@
+[
+
+  {
+    "id": "0001",
+    "name": "Baseball Field",
+    "abbreviation": "BF",
+    "type": "Athletics",
+    "description": "University's dedicated field for baseball games and practices.",
+    "imageName": "baseballfield",
+    "coordinates": {
+      "longitude": -82.464300,
+      "latitude": 27.945800
+    }
+  },
+  {
+    "id": "0002",
+    "name": "Beach Volleyball Complex",
+    "abbreviation": "BVC",
+    "type": "Athletics",
+    "description": "Beach volleyball courts for recreational and competitive play.",
+    "imageName": "beachvolleyballcomplex",
+    "coordinates": {
+      "longitude": -82.464850,
+      "latitude": 27.946150
+    }
+  },
+  {
+    "id": "0003",
+    "name": "Benson Alex Riseman Aquatic Center",
+    "abbreviation": "BAC",
+    "type": "Recreational",
+    "description": "Swimming pool facility used for training and recreational swimming.",
+    "imageName": "aquaticcenter",
+    "coordinates": {
+      "longitude": -82.464500,
+      "latitude": 27.946600
+    }
+  },
+  {
+    "id": "0004",
+    "name": "Benson Alex Riseman Fitness and Recreational Center",
+    "abbreviation": "FIT",
+    "type": "Recreational",
+    "description": "Fitness and recreational center with modern amenities for student use.",
+    "imageName": "risemanfitness",
+    "coordinates": {
+      "longitude": -82.464700,
+      "latitude": 27.946700
+    }
+  },
+  {
+    "id": "0005",
+    "name": "Cass Gymnasium",
+    "abbreviation": "CG",
+    "type": "Athletics",
+    "description": "Gymnasium for basketball and other indoor sports activities.",
+    "imageName": "cassgymnasium",
+    "coordinates": {
+      "longitude": -82.465000,
+      "latitude": 27.946300
+    }
+  },
+  {
+    "id": "0006",
+    "name": "Martinez Athletics Center",
+    "abbreviation": "MAC",
+    "type": "Athletics",
+    "description": "Center for athletic training, events, and sports management.",
+    "imageName": "martinezathleticscenter",
+    "coordinates": {
+      "longitude": -82.465200,
+      "latitude": 27.946500
+    }
+  },
+  {
+    "id": "0007",
+    "name": "Naimoli And Young Family Tennis Complex",
+    "abbreviation": "TC",
+    "type": "Athletics",
+    "description": "Tennis courts used for competitive and recreational play.",
+    "imageName": "tenniscomplex",
+    "coordinates": {
+      "longitude": -82.465300,
+      "latitude": 27.946400
+    }
+  },
+  {
+    "id": "0008",
+    "name": "Naimoli Family Athletic and Intramural Complex",
+    "abbreviation": "NAIC",
+    "type": "Athletics",
+    "description": "Multipurpose complex for athletics and intramural sports.",
+    "imageName": "athleticcomplex",
+    "coordinates": {
+      "longitude": -82.465600,
+      "latitude": 27.946800
+    }
+  },
+  {
+    "id": "0009",
+    "name": "Naimoli Family Softball Complex",
+    "abbreviation": "NSC",
+    "type": "Athletics",
+    "description": "Dedicated field for softball games and practices.",
+    "imageName": "softballcomplex",
+    "coordinates": {
+      "longitude": -82.465400,
+      "latitude": 27.946200
+    }
+  },
+  {
+    "id": "0010",
+    "name": "Pepin Stadium",
+    "abbreviation": "PS",
+    "type": "Athletics",
+    "description": "Stadium used for soccer games, track events, and other sports.",
+    "imageName": "pepinstadium",
+    "coordinates": {
+      "longitude": -82.465500,
+      "latitude": 27.946000
+    }
+  },
+  {
+    "id": "0011",
+    "name": "Pickleball Courts",
+    "abbreviation": "PC",
+    "type": "Recreational",
+    "description": "Outdoor courts dedicated to the sport of pickleball.",
+    "imageName": "pickleballcourts",
+    "coordinates": {
+      "longitude": -82.465700,
+      "latitude": 27.945900
+    }
+  },
+  {
+    "id": "0012",
+    "name": "Track at Pepin Stadium",
+    "abbreviation": "TPS",
+    "type": "Athletics",
+    "description": "Track facility around Pepin Stadium for track and field activities.",
+    "imageName": "trackatpepin",
+    "coordinates": {
+      "longitude": -82.465550,
+      "latitude": 27.946050
+    }
+  },
+  {
+    "id": "0013",
+    "name": "Delo Park",
+    "abbreviation": "DP",
+    "type": "Recreational",
+    "description": "Park area used for student relaxation and small gatherings.",
+    "imageName": "delopark",
+    "coordinates": {
+      "longitude": -82.465800,
+      "latitude": 27.946100
+    }
+  },
+  {
+    "id": "0014",
+    "name": "Plant Park",
+    "abbreviation": "PP",
+    "type": "Recreational",
+    "description": "Historic park with scenic views and a popular location for events.",
+    "imageName": "plantpark",
+    "coordinates": {
+      "longitude": -82.465900,
+      "latitude": 27.946200
+    }
+  },
+  {
+    "id": "0015",
+    "name": "Basketball Courts at Benson Alex Riseman Aquatic Center",
+    "abbreviation": "BAC-BC",
+    "type": "Recreational",
+    "description": "Outdoor basketball courts located near the Aquatic Center.",
+    "imageName": "basketballcourts",
+    "coordinates": {
+      "longitude": -82.464600,
+      "latitude": 27.946750
+    }
+  }
+]
+

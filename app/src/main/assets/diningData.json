@@ -1,0 +1,218 @@
+[
+  {
+    "id": "0001",
+    "name": "Ultimate Dining Hall",
+    "location": "Vaughn Center",
+    "type": "Dining Hall",
+    "description": "Main dining hall offering all-you-can-eat meals with multiple cuisine stations.",
+    "coordinates": {
+      "latitude": 27.947000,
+      "longitude": -82.465500
+    },
+    "imageName": "ultimate_dining_hall"
+  },
+  {
+    "id": "0002",
+    "name": "Einstein Bagels",
+    "location": "Vaughn Center",
+    "type": "Café",
+    "description": "Bagels, coffee, and breakfast sandwiches.",
+    "coordinates": {
+      "latitude": 27.947000,
+      "longitude": -82.465500
+    },
+    "imageName": "einstein_bagels"
+  },
+  {
+    "id": "0003",
+    "name": "Fresh Creations",
+    "location": "Vaughn Center",
+    "type": "Healthy Dining",
+    "description": "Salads, wraps, and other fresh, healthy options.",
+    "coordinates": {
+      "latitude": 27.947000,
+      "longitude": -82.465500
+    },
+    "imageName": "fresh_creations"
+  },
+  {
+    "id": "0004",
+    "name": "Chick-fil-A",
+    "location": "Vaughn Center",
+    "type": "Fast Food",
+    "description": "Popular chain known for chicken sandwiches and waffle fries.",
+    "coordinates": {
+      "latitude": 27.947000,
+      "longitude": -82.465500
+    },
+    "imageName": "chick_fil_a"
+  },
+  {
+    "id": "0005",
+    "name": "La Havana",
+    "location": "Vaughn Center",
+    "type": "Latin Cuisine",
+    "description": "Authentic Cuban and Latin-style dishes.",
+    "coordinates": {
+      "latitude": 27.947000,
+      "longitude": -82.465500
+    },
+    "imageName": "la_havana"
+  },
+  {
+    "id": "0006",
+    "name": "The Grill",
+    "location": "Vaughn Center",
+    "type": "Grill",
+    "description": "Grilled foods including burgers and sandwiches.",
+    "coordinates": {
+      "latitude": 27.947000,
+      "longitude": -82.465500
+    },
+    "imageName": "the_grill"
+  },
+  {
+    "id": "0007",
+    "name": "Starbucks (ICB)",
+    "location": "ICB",
+    "type": "Café",
+    "description": "Full-service Starbucks with coffee, tea, and pastries.",
+    "coordinates": {
+      "latitude": 27.948317,
+      "longitude": -82.466317
+    },
+    "imageName": "starbucks_icb"
+  },
+  {
+    "id": "0008",
+    "name": "Starbucks (Grand Center)",
+    "location": "Grand Center",
+    "type": "Café",
+    "description": "Another campus Starbucks location serving the full Starbucks menu.",
+    "coordinates": {
+      "latitude": 27.946904,
+      "longitude": -82.465704
+    },
+    "imageName": "grandcenter"
+  },
+  {
+    "id": "0009",
+    "name": "Salsa Rico",
+    "location": "Morsani Hall",
+    "type": "Mexican Grill",
+    "description": "Mexican-style fast food including burrito bowls and tacos.",
+    "coordinates": {
+      "latitude": 27.947100,
+      "longitude": -82.466100
+    },
+    "imageName": "salsa_rico"
+  },
+  {
+    "id": "0010",
+    "name": "Pandini’s",
+    "location": "Morsani Hall",
+    "type": "Italian",
+    "description": "Italian-inspired dishes including pizza, pasta, and salads.",
+    "coordinates": {
+      "latitude": 27.947100,
+      "longitude": -82.466100
+    },
+    "imageName": "pandinis"
+  },
+  {
+    "id": "0011",
+    "name": "Dairy Queen",
+    "location": "Morsani Hall",
+    "type": "Fast Food",
+    "description": "Ice cream, burgers, and Dairy Queen’s famous Blizzards.",
+    "coordinates": {
+      "latitude": 27.947100,
+      "longitude": -82.466100
+    },
+    "imageName": "dairy_queen"
+  },
+  {
+    "id": "0012",
+    "name": "Aussie Grill",
+    "location": "Morsani Hall",
+    "type": "Grill",
+    "description": "Grilled dishes inspired by Australian cuisine.",
+    "coordinates": {
+      "latitude": 27.947100,
+      "longitude": -82.466100
+    },
+    "imageName": "aussie_grill"
+  },
+  {
+    "id": "0013",
+    "name": "The Rathskeller",
+    "location": "Plant Hall",
+    "type": "American Cuisine",
+    "description": "A classic café offering burgers, fries, and American favorites.",
+    "coordinates": {
+      "latitude": 27.947509,
+      "longitude": -82.465309
+    },
+    "imageName": "the_rathskeller"
+  },
+  {
+    "id": "0014",
+    "name": "Panache",
+    "location": "Morsani Hall",
+    "type": "Gourmet",
+    "description": "Gourmet dining with a focus on fresh, seasonal ingredients.",
+    "coordinates": {
+      "latitude": 27.947100,
+      "longitude": -82.466100
+    },
+    "imageName": "panache"
+  },
+  {
+    "id": "0015",
+    "name": "Star Ginger",
+    "location": "Morsani Hall",
+    "type": "Asian",
+    "description": "Pan-Asian cuisine with stir-fries, noodle bowls, and vegetarian options.",
+    "coordinates": {
+      "latitude": 27.947100,
+      "longitude": -82.466100
+    },
+    "imageName": "star_ginger"
+  },
+  {
+    "id": "0016",
+    "name": "AFC Sushi",
+    "location": "Morsani Hall",
+    "type": "Sushi",
+    "description": "Fresh sushi and Japanese-style dishes.",
+    "coordinates": {
+      "latitude": 27.947100,
+      "longitude": -82.466100
+    },
+    "imageName": "afc_sushi"
+  },
+  {
+    "id": "0017",
+    "name": "Mindful",
+    "location": "Morsani Hall",
+    "type": "Healthy Options",
+    "description": "Health-focused dining options with balanced meals.",
+    "coordinates": {
+      "latitude": 27.947100,
+      "longitude": -82.466100
+    },
+    "imageName": "mindful"
+  },
+  {
+    "id": "0018",
+    "name": "Gourmet Grocer",
+    "location": "Morsani Hall",
+    "type": "Grocery",
+    "description": "Small grocery store offering snacks, drinks, and essentials.",
+    "coordinates": {
+      "latitude": 27.947100,
+      "longitude": -82.466100
+    },
+    "imageName": "gourmet_grocer"
+  }
+]

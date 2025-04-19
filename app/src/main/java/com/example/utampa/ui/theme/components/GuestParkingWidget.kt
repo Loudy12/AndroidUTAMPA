@@ -26,8 +26,4 @@ fun GuestParkingWidget() {
     }
 }
 
-@Preview
-@Composable
-fun PreviewGuestParkingWidget() {
-    GuestParkingWidget()
-}
+

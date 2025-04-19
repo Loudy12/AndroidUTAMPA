@@ -1,0 +1,26 @@
+[
+  {
+    "id": "0001",
+    "name": "Austin Hall",
+    "abbreviation": "AH",
+    "type": "Residential",
+    "description": "Residence hall with modern amenities for student housing.",
+    "imageName": "austinhall",
+    "coordinates": {
+      "longitude": -82.465101,
+      "latitude": 27.946101
+    }
+  },
+  {
+    "id": "0002",
+    "name": "Barrymore Hotel",
+    "abbreviation": "BH",
+    "type": "Hotel",
+    "description": "Off-campus hotel used for student housing and events.",
+    "imageName": "barrymorehotel",
+    "coordinates": {
+      "longitude": -82.465502,
+      "latitude": 27.946702
+    }
+  }
+]

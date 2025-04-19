@@ -10,7 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.example.utampa.data.Dining
+import com.example.utampa.data.Building
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.draw.clip
 import androidx.compose.material.icons.Icons
@@ -26,12 +26,15 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.TopAppBar
+import androidx.navigation.NavController
+import com.example.utampa.data.Dining
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DiningDetailScreen(
-    dining: Dining,
-    onBack: () -> Unit
+fun DiningDetailScreen(navController: NavController,
+                       dining: Dining,
+                       onBack: () -> Unit
 ) {
     val context = LocalContext.current
     val configuration = LocalConfiguration.current
@@ -40,12 +43,19 @@ fun DiningDetailScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(text = dining.name, style = MaterialTheme.typography.titleLarge) },
+                title = {
+                    // Uses building.name with titleLarge typography style
+                    Text(
+                        text = dining.name,
+                        style = MaterialTheme.typography.titleLarge
+                    )
+                },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
                         Icon(Icons.Default.ArrowBack, contentDescription = "Back")
                     }
                 },
+                // Matches the color scheme from BuildingListScreen
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.surface,
                     titleContentColor = MaterialTheme.colorScheme.onPrimary,
@@ -54,52 +64,32 @@ fun DiningDetailScreen(
                 )
             )
         }
-    ) { innerPadding ->
+    )
+    { innerPadding ->
         Column(
             verticalArrangement = Arrangement.Top,
-            modifier = Modifier.fillMaxSize().padding(innerPadding)
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(innerPadding)
         ) {
+            // Top half: building image
+
+            // Updated Image Modifier:
+            // - fillMaxWidth(0.95f) leaves a gap on both sides to show the background.
+            // - align(Alignment.CenterHorizontally) centers the image.
+            // - Added top padding so that the image doesn't start flush at the very top.
             Image(
                 painter = painterResource(id = dining.getImageResId(context)),
                 contentDescription = dining.name,
-                contentScale = ContentScale.Crop,
+                contentScale = ContentScale.Crop, // Adjust scaling as desired (Crop maintains aspect ratio and fills space)
                 modifier = Modifier
-                    .fillMaxWidth(0.95f)
+                    .fillMaxWidth(0.95f) // Changed from fillMaxWidth() to leave gaps on the sides
                     .height(screenHeight / 2)
-                    .clip(RoundedCornerShape(8.dp))
+                    .clip(RoundedCornerShape(8.dp)) // Rounded corners
                     .border(2.dp, Color.Gray, RoundedCornerShape(8.dp))
-                    .align(Alignment.CenterHorizontally)
-                    .padding(top = 8.dp)
+                    .align(Alignment.CenterHorizontally) // Center the image horizontally
+                    .padding(top = 8.dp) // Added top padding for extra gap from the top edge
             )
-
-            /* Map Feature (Currently Commented Out)
-            val cameraPositionState = rememberCameraPositionState {
-                position = CameraPosition.fromLatLngZoom(
-                    com.google.android.gms.maps.model.LatLng(dining.coordinates.latitude, dining.coordinates.longitude),
-                    15f
-                )
-            }
-            Box(
-                modifier = Modifier.fillMaxWidth().weight(1f)
-            ) {
-                GoogleMap(
-                    modifier = Modifier.fillMaxSize(),
-                    cameraPositionState = cameraPositionState,
-                    uiSettings = MapUiSettings(zoomControlsEnabled = true, myLocationButtonEnabled = true),
-                    properties = MapProperties(isMyLocationEnabled = false)
-                ) {
-                    Marker(
-                        state = MarkerState(
-                            position = com.google.android.gms.maps.model.LatLng(
-                                dining.coordinates.latitude,
-                                dining.coordinates.longitude
-                            )
-                        ),
-                        title = dining.name
-                    )
-                }
-            }
-            */
         }
     }
 }

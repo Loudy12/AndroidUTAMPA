@@ -1,48 +1,71 @@
 package com.example.utampa.ui.theme.pages
-
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.OutlinedTextField
+import androidx.compose.material.Scaffold
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import com.example.utampa.models.Parking
 
+
+@Composable
+fun ParkingListBackArrow(navController: NavController) {
+    IconButton(onClick = { navController.popBackStack() }) {
+        Icon(
+            imageVector = Icons.Filled.ArrowBack,
+            contentDescription = "Back to Campus"
+        )
+    }
+}
 @OptIn(ExperimentalMaterial3Api::class)
+
 @Composable
 fun ParkingListScreen(
+    navController: NavController,
     parkings: List<Parking>,
-    onParkingClick: (String) -> Unit
+    onparkingClick: (String) -> Unit
 ) {
     val context = LocalContext.current
     var searchText by remember { mutableStateOf("") }
-
     val filteredParkings = if (searchText.length >= 2) {
         parkings.filter { it.name.contains(searchText, ignoreCase = true) }
     } else {
         parkings
     }
-
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(text = "Parking Garages", style = MaterialTheme.typography.titleLarge) },
+                title = {
+                    Text(
+                        text = "parkings",
+                        style = MaterialTheme.typography.titleLarge
+                    )
+                },
+                navigationIcon = {
+                    ParkingListBackArrow(navController)
+                },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.surface,
-                    titleContentColor = MaterialTheme.colorScheme.onPrimary
+                    titleContentColor = MaterialTheme.colorScheme.onPrimary,
+                    navigationIconContentColor = MaterialTheme.colorScheme.onPrimary
                 )
             )
-        },
+        }
     ) { innerPadding ->
         Column(
             modifier = Modifier
@@ -52,21 +75,26 @@ fun ParkingListScreen(
             OutlinedTextField(
                 value = searchText,
                 onValueChange = { searchText = it },
-                label = { Text("Search parking garages...") },
+                label = { Text("Search parkings...") },
                 singleLine = true,
                 keyboardOptions = KeyboardOptions.Default.copy(imeAction = ImeAction.Done),
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(8.dp)
             )
-
-            LazyColumn(modifier = Modifier.padding(innerPadding)) {
-                items(filteredParkings) { parking -> // ✅ This should now work properly
+            LazyColumn(
+                modifier = Modifier.padding(innerPadding)
+            ) {
+                items(filteredParkings) { parking ->
                     Column(
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(8.dp)
-                            .clickable { onParkingClick(parking.id) }
+                            .clickable {
+                                if (navController.currentDestination?.route != "parking_detail_screen") {
+                                    onparkingClick(parking.id)
+                                }
+                            }
                     ) {
                         Image(
                             painter = painterResource(id = parking.getImageResId(context)),
@@ -78,8 +106,14 @@ fun ParkingListScreen(
                                 .clip(RoundedCornerShape(8.dp))
                         )
                         Spacer(modifier = Modifier.height(8.dp))
-                        Text(text = parking.name, style = MaterialTheme.typography.titleLarge)
-                        Text(text = parking.type, style = MaterialTheme.typography.bodyMedium)
+                        Text(
+                            text = parking.name,
+                            style = MaterialTheme.typography.titleLarge
+                        )
+                        Text(
+                            text = parking.type,
+                            style = MaterialTheme.typography.bodyMedium
+                        )
                     }
                 }
             }

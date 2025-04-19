@@ -1,4 +1,5 @@
 package com.example.utampa.ui.theme.pages
+
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -10,7 +11,11 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -21,15 +26,28 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.utampa.R
+import androidx.navigation.NavController
+import com.example.utampa.ui.theme.pages.navigateBackToCampus
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AcademicSuccessCenterScreen() {
+fun AcademicSuccessCenterScreen(navController: NavController) {
     val context = LocalContext.current
 
     Scaffold(
         topBar = {
             TopAppBar(
+                navigationIcon = {
+                    IconButton(onClick = {
+                        // Uses the shared navigation function to go back to Campus
+                        navigateBackToCampus(navController)
+                    }) {
+                        Icon(
+                            imageVector = Icons.Filled.ArrowBack,
+                            contentDescription = "Back to Campus"
+                        )
+                    }
+                },
                 title = { Text("Academic Success Center", fontSize = 18.sp) },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.surface
@@ -45,7 +63,7 @@ fun AcademicSuccessCenterScreen() {
         ) {
             // Background image
             Image(
-                painter = painterResource(id = R.drawable.academicsuccessbackground), // Make sure academicsuccessbackground.jpg is in res/drawable
+                painter = painterResource(id = R.drawable.academicsuccessbackground),
                 contentDescription = "Academic Success Background",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
@@ -79,7 +97,7 @@ fun AcademicSuccessCenterScreen() {
                 LinkView(context, "Pre-Health/Pre-Law Professions Advising", "https://www.ut.edu/academics/academic-support/academic-success-center/academic-advising-office/pre-health-pre-law-professional-advising")
                 LinkView(context, "Request to Change Advisor or Major/Minor", "https://www.ut.edu/academics/academic-support/academic-success-center/academic-advising-office/request-to-change-advisor-or-major-minor-and-certificate")
                 LinkView(context, "Transfer and Veteran Student Advising", "https://example.com/transfer-veteran")
-                LinkView(context, "Withdrawal from the University", "https://www.ut.edu/academics/academic-support/academic-success-center/academic-advising-office/transfer-and-veteran-student-advising")
+                LinkView(context, "Withdrawal from the University", "https://www.ut.edu/academics/academic-support/academic-success-center/academic-advising-office/withdrawal-from-the-university")
                 LinkView(context, "Withdrawing from Courses", "https://www.ut.edu/academics/academic-support/academic-success-center/academic-advising-office/withdrawal-from-the-university")
 
                 SectionTitle("Student Accessibility and Academic Support")
@@ -100,7 +118,7 @@ fun AcademicSuccessCenterScreen() {
     }
 }
 
-// Section Title
+// Section Title Composable
 @Composable
 fun SectionTitle(title: String) {
     Text(
