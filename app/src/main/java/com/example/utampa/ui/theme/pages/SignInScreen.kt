@@ -3,7 +3,6 @@ package com.example.utampa.ui.theme.pages
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.compose.LocalLifecycleOwner
 
-
 import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -14,7 +13,6 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Public
-import androidx.compose.material3.AlertDialogDefaults.shape
 import androidx.compose.runtime.*
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
@@ -55,6 +53,15 @@ fun SignInScreen(
     val authErrorMessage by authController.errorMessage.observeAsState(initial = null)
     val displayError = localErrorMessage ?: authErrorMessage
 
+    LaunchedEffect(Unit) {
+        authController.isLoggedIn.observe(lifecycleOwner) { loggedIn ->
+            if (loggedIn == true) {
+                context.startActivity(Intent(context, MainActivity::class.java))
+                activity?.finish()
+            }
+        }
+    }
+
     if (isLoading) {
         LoadingView()
     } else {
@@ -62,11 +69,10 @@ fun SignInScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .background(Color(0xFF262626))
-                .verticalScroll(rememberScrollState()) //can delete along with imports after testing
+                .verticalScroll(rememberScrollState())
                 .padding(horizontal = 3.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // Top Banner Image
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -94,7 +100,6 @@ fun SignInScreen(
                 )
             }
 
-
             Spacer(modifier = Modifier.height(18.dp))
 
             Text("UTampa App", fontSize = 30.sp, color = Color.White, modifier = Modifier.padding(top = 12.dp))
@@ -104,22 +109,14 @@ fun SignInScreen(
                 textAlign = TextAlign.Center,
                 color = Color.Gray,
                 modifier = Modifier.padding(vertical = 25.dp)
-
             )
 
             Spacer(modifier = Modifier.height(30.dp))
             Button(
                 onClick = {
-                    if (activity != null) {
-                        authController.signInWithHostedUI(activity)
-
-                        authController.isLoggedIn.observe(lifecycleOwner) { loggedIn ->
-                            if (loggedIn == true) {
-                                context.startActivity(Intent(context, MainActivity::class.java))
-                                activity.finish()
-                            }
-                        }
-                    } else {
+                    activity?.let {
+                        authController.signInWithHostedUI(it)
+                    } ?: run {
                         localErrorMessage = "Unable to retrieve Activity context."
                     }
                 },
@@ -132,7 +129,6 @@ fun SignInScreen(
             ) {
                 Text("Continue with Okta", color = Color.White, fontSize = 16.sp)
             }
-
 
             Spacer(modifier = Modifier.height(25.dp))
 

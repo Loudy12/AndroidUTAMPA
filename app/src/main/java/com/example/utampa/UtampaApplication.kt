@@ -1,9 +1,12 @@
 package com.example.utampa
 import android.app.Application
+import com.example.utampa.AWS.AWSIAMCredentialsManager
 
 class UtampaApplication : Application() {
-    init {
+    override fun onCreate() {
+        super.onCreate()
         instance = this
+        AWSIAMCredentialsManager.appContext = applicationContext
     }
 
     companion object {

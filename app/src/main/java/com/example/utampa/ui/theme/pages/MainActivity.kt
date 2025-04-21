@@ -206,30 +206,7 @@ class MainActivity : ComponentActivity() {
 
 
     // ✅ Fixed: Moved onNewIntent() OUTSIDE onCreate()
-    override fun onNewIntent(intent: Intent) {
-        super.onNewIntent(intent)
 
-        intent.data?.let { uri ->
-            val uriString = uri.toString()
-            Log.d("MainActivity", "Received redirect URI: $uriString") // Debug log
-
-            // Extract all query parameters and log them
-            val queryParams = uri.queryParameterNames
-            for (param in queryParams) {
-                Log.d("MainActivity", "Query param: $param = ${uri.getQueryParameter(param)}")
-            }
-
-            // Check if "state" exists
-            val stateParam = uri.getQueryParameter("state")
-            if (stateParam == "logout") {
-                Log.d("MainActivity", "Ignoring logout redirect")
-                return
-            }
-
-            // Otherwise, handle login normally
-            AuthController.getInstance(this).handleOpenURL(uri)
-        }
-    }
 }
 
 
