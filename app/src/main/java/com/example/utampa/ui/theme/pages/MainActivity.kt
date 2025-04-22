@@ -43,7 +43,7 @@ import com.example.utampa.helper.loadBuildings
 import com.example.utampa.helper.loadDiningData
 import com.example.utampa.helper.loadParkingData
 import com.example.utampa.helper.loadRecreationalData
-import com.example.utampa.ui.CampusSafetyView
+import com.example.utampa.ui.theme.pages.CampusSafetyView
 
 
 class MainActivity : ComponentActivity() {
@@ -65,9 +65,7 @@ class MainActivity : ComponentActivity() {
                 var navKey by remember { mutableIntStateOf(0) } // Add this state variable
 
                 Scaffold(
-                    topBar = {
-                        SignOutTopAppBar(authController = AuthController.getInstance(this))
-                    },
+
                     bottomBar = {
                         //BottomNavBarApp(navController) // Call BottomNavBarApp here
                         var selectedItem by remember { mutableIntStateOf(0) }
@@ -182,8 +180,8 @@ class MainActivity : ComponentActivity() {
                                 } }
 
                                 // NEW: Campus Safety route added here
-                                composable("campus_safety_screen") {
-                                    CampusSafetyView(navController = navController)
+                                composable("campus_safety_screen2") {
+                                    CampusSafetyScreen2()
                                 }
                                 composable("academic_success_center_screen") {
                                     AcademicSuccessCenterScreen(navController = navController)
@@ -191,6 +189,30 @@ class MainActivity : ComponentActivity() {
                                 composable("utampa_home") {
                                     UTampaApp(navController)
                                 }
+                                composable("academic_success_center2") {
+                                    AcademicSuccessCenterScreen2(navController)
+                                }
+                                composable("course_catalog_screen") {
+                                    CourseCatalogScreen()
+                                }
+                                composable("transcripts_screen") {
+                                    TranscriptsScreen()
+                                }
+                                composable("mental_health_counseling_screen") {
+                                    MentalHealthCounselingScreen()
+                                }
+                                composable("wellness_programs_screen") {
+                                    WellnessProgramsScreen()
+                                }
+                                composable("emergency_contacts_screen") {
+                                    EmergencyContactsScreen()
+                                }
+
+                                composable("testing_center_screen") {
+                                    TestingCenterScreen()
+                                }
+
+
 
                                 composable("for_you_screen") { ForYouScreen(navController = navController) } // Added ForYouScreen route
                                 composable("resources_screen") { ResourcesScreen(navController = navController) } // Added
@@ -206,24 +228,31 @@ class MainActivity : ComponentActivity() {
 
 
     // ✅ Fixed: Moved onNewIntent() OUTSIDE onCreate()
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
 
+        intent.data?.let { uri ->
+            val uriString = uri.toString()
+            Log.d("MainActivity", "Received redirect URI: $uriString") // Debug log
+
+            // Extract all query parameters and log them
+            val queryParams = uri.queryParameterNames
+            for (param in queryParams) {
+                Log.d("MainActivity", "Query param: $param = ${uri.getQueryParameter(param)}")
+            }
+
+            // Check if "state" exists
+            val stateParam = uri.getQueryParameter("state")
+            if (stateParam == "logout") {
+                Log.d("MainActivity", "Ignoring logout redirect")
+                return
+            }
+
+            // Otherwise, handle login normally
+            AuthController.getInstance(this).handleOpenURL(uri)
+        }
+    }
 }
 
 
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun SignOutTopAppBar(
-    authController: AuthController,
-    title: String = "UTampa",
-    onSignOut: () -> Unit = {}
-) {
-}
 
-
-@Preview(showBackground = true)
-@Composable
-fun BottomNavBarPreview() {
-    val navController = rememberNavController() // ✅ Create a mock NavController
-
-
-}

@@ -66,7 +66,7 @@ fun ParkingPassWidget(onClick: () -> Unit) {
                     verticalArrangement = Arrangement.SpaceBetween,
                     modifier = Modifier.fillMaxSize()
                 ) {
-                    // Throw in random words behind the glass to give it aesthetic
+                    // Throw in random words behind the glass to give aesthetic
                     Text(
                         text = "Title Here",
                         fontSize = 20.sp,

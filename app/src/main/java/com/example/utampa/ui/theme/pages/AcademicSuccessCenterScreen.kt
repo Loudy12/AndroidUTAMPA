@@ -20,6 +20,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.modifier.modifierLocalMapOf
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -28,6 +29,8 @@ import androidx.compose.ui.unit.sp
 import com.example.utampa.R
 import androidx.navigation.NavController
 import com.example.utampa.ui.theme.pages.navigateBackToCampus
+import com.example.utampa.ui.theme.components.LinkView
+import com.example.utampa.ui.theme.components.SectionTitle
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -40,7 +43,7 @@ fun AcademicSuccessCenterScreen(navController: NavController) {
                 navigationIcon = {
                     IconButton(onClick = {
                         // Uses the shared navigation function to go back to Campus
-                        navigateBackToCampus(navController)
+                        navController.popBackStack()
                     }) {
                         Icon(
                             imageVector = Icons.Filled.ArrowBack,
@@ -118,29 +121,4 @@ fun AcademicSuccessCenterScreen(navController: NavController) {
     }
 }
 
-// Section Title Composable
-@Composable
-fun SectionTitle(title: String) {
-    Text(
-        text = title,
-        fontSize = 18.sp,
-        fontWeight = FontWeight.Bold,
-        modifier = Modifier.padding(top = 12.dp, bottom = 8.dp)
-    )
-}
 
-// LinkView Composable
-@Composable
-fun LinkView(context: Context, label: String, url: String) {
-    Text(
-        text = label,
-        fontSize = 16.sp,
-        color = Color.Red,
-        modifier = Modifier
-            .padding(vertical = 4.dp)
-            .clickable {
-                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
-                context.startActivity(intent)
-            }
-    )
-}
