@@ -211,6 +211,9 @@ class MainActivity : ComponentActivity() {
                                 composable("testing_center_screen") {
                                     TestingCenterScreen()
                                 }
+                                composable("health_wellness_screen") {
+                                    HealthAndWellnessCenterScreen()
+                                }
 
 
 

@@ -168,7 +168,7 @@ fun WidgetItemSquare(widget: WidgetItem, navController: NavHostController?) {
                     "Transcripts" -> navController?.navigate("transcripts_screen")
                     "Campus Health and Wellness" -> navController?.navigate("health_wellness_screen")
                     "Mental Health Counseling" -> navController?.navigate("mental_health_counseling_screen")
-                    "Campus Safety" -> navController?.navigate("campus_safety_screen")
+                    "Campus Safety" -> navController?.navigate("campus_safety_screen2")
                     "Emergency Contacts" -> navController?.navigate("emergency_contacts_screen")
                     "Wellness Programs" -> navController?.navigate("wellness_programs_screen")
 
