@@ -30,7 +30,7 @@ fun HealthAndWellnessCenterScreen() {
     ) {
         // Banner image
         Image(
-            painter = painterResource(id = R.drawable.ic_spartan),
+            painter = painterResource(id = R.drawable.dickeyhealthwellness),
             contentDescription = "Medical Services Banner",
             contentScale = ContentScale.Crop,
             modifier = Modifier

@@ -30,7 +30,7 @@ fun MentalHealthCounselingScreen() {
     ) {
         // Header image
         Image(
-            painter = painterResource(id = R.drawable.ic_spartan),
+            painter = painterResource(id = R.drawable.risemanfitness),
             contentDescription = "Mental Health Banner",
             contentScale = ContentScale.Crop,
             modifier = Modifier

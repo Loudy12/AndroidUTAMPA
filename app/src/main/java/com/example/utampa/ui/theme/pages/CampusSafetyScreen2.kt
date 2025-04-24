@@ -30,7 +30,7 @@ fun CampusSafetyScreen2() {
     ) {
         // Banner image
         Image(
-            painter = painterResource(id = R.drawable.ic_spartan),
+            painter = painterResource(id = R.drawable.starbucks),
             contentDescription = "Campus Safety Banner",
             contentScale = ContentScale.Crop,
             modifier = Modifier

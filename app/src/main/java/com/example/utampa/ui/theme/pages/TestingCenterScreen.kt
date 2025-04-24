@@ -30,7 +30,7 @@ fun TestingCenterScreen() {
     ) {
         // Top banner image
         Image(
-            painter = painterResource(id = R.drawable.ic_spartan),
+            painter = painterResource(id = R.drawable.graduatehealthstudies),
             contentDescription = "Testing Center Banner",
             contentScale = ContentScale.Crop,
             modifier = Modifier

@@ -32,15 +32,30 @@ import com.example.utampa.ui.theme.components.ParkingGarageWidget
 import com.example.utampa.ui.theme.defBackground
 import androidx.navigation.NavController
 import androidx.compose.foundation.clickable
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.tooling.preview.Preview
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ForYouScreen(navController: NavController) {
     val newsList = listOf(
-        NewsItem("UTampa Wins!", "The University of Tampa secures the first place!", "https://source.unsplash.com/random/300x200"),
-        NewsItem("New Research at UT", "Scientists discover innovative technology.", "https://source.unsplash.com/random/300x201"),
-        NewsItem("Campus Expansion", "UT to add new buildings and dorms!", "https://source.unsplash.com/random/300x202")
-    )
+        NewsItem("Swim The Seas at the RAC", "Monday, March 17th, 2025 8 AM", imageResId = R.drawable.rac_swim),
+        NewsItem("New member meetings", "Wed, Apr 23, 2025 12 PM", imageResId = R.drawable.blank_news),
+        NewsItem("Dogs & Donuts: Happy Tails x Active Minds", "Wed, Apr 23, 2025 12 PM", imageResId = R.drawable.blank_news),
+        NewsItem("Qualtrics Basic Training", "Wed, Apr 23, 2025 1 PM", imageResId = R.drawable.qualtrics_pic),
+        NewsItem("Zoom Basic Training", "Wed, Apr 23, 2025 2 PM", imageResId = R.drawable.zoom_pic),
+        NewsItem("DSP X Flo Energy Sales Training", "Wed, Apr 23, 2025 3 PM", imageResId = R.drawable.blank_news),
+        NewsItem("UT Boxing Club Meeting", "Wed, Apr 23, 2025 4PM", imageResId = R.drawable.boxing_club_pic),
+        NewsItem("Ai for All: Unlocking Accessibility with ChatGPT", "Wed, Apr 23, 2025 4 PM", imageResId = R.drawable.ai_for_all_pic),
+        NewsItem("Barry's Burn & Boost", "Wed, Apr 23, 2025 6 PM", imageResId = R.drawable.barrys_pic),
+        NewsItem("Slime Time", "Wed, Apr 23, 2025 6 PM", imageResId = R.drawable.slime_time_pic),
+        NewsItem("Banned Book Bingo", "Wed, Apr 23, 2025 4:30 PM", imageResId = R.drawable.blank_news),
+        NewsItem("Greek Awards Night", "Wed, Apr 23, 2025 6 PM", imageResId = R.drawable.greek_awards_pic),
+        NewsItem("Men's Bible Study", "Wed, Apr 23, 2025 6 PM", imageResId = R.drawable.bible_study_pic),
+        NewsItem("Election Night", "Wed, Apr 23, 2025 6 PM", imageResId = R.drawable.election_pic),
+        NewsItem("Earth Week Movie Night", "Wed, Apr 23, 2025 6 PM", imageResId = R.drawable.earth_movie_pic),
+
+        )
 
     Column(
         modifier = Modifier
@@ -52,15 +67,6 @@ fun ForYouScreen(navController: NavController) {
             TopAppBar(
                 title = {
                     Text("For You", style = MaterialTheme.typography.headlineMedium)
-                },
-                actions = {
-                    IconButton(onClick = { /* Handle notification click */ }) {
-                        Image(
-                            painter = painterResource(id = R.drawable.ic_bell),
-                            contentDescription = "Notifications",
-                            modifier = Modifier.size(24.dp)
-                        )
-                    }
                 },
                 modifier = Modifier.fillMaxWidth(),
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = MaterialTheme.colorScheme.background)
@@ -78,7 +84,7 @@ fun ForYouScreen(navController: NavController) {
         ) {
             // Latest News Section
             item {
-                Text("Latest News", fontSize = 20.sp, fontWeight = FontWeight.Bold)
+                Text("Events", fontSize = 20.sp, fontWeight = FontWeight.Bold)
                 Spacer(modifier = Modifier.height(8.dp))
                 NewsWidget(newsList)
                 Spacer(modifier = Modifier.height(24.dp))
@@ -111,4 +117,9 @@ fun ForYouScreen(navController: NavController) {
     }
 }
 
+@Preview
+@Composable
+fun ForYouScreenPreview() {
+    ForYouScreen(navController = NavController(LocalContext.current))
+}
 

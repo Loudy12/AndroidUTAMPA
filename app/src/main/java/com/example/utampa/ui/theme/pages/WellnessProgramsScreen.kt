@@ -30,7 +30,7 @@ fun WellnessProgramsScreen() {
     ) {
         // Header image
         Image(
-            painter = painterResource(id = R.drawable.ic_spartan),
+            painter = painterResource(id = R.drawable.dickeyhealthwellness),
             contentDescription = "Wellness Banner",
             contentScale = ContentScale.Crop,
             modifier = Modifier

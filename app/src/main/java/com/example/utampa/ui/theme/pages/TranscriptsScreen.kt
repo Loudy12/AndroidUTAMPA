@@ -30,7 +30,7 @@ fun TranscriptsScreen() {
     ) {
         // Top image (ic_spartan)
         Image(
-            painter = painterResource(id = R.drawable.ic_spartan),
+            painter = painterResource(id = R.drawable.pool),
             contentDescription = "Transcripts Banner",
             contentScale = ContentScale.Crop,
             modifier = Modifier

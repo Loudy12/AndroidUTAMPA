@@ -32,7 +32,7 @@ fun CourseCatalogScreen() {
     ) {
         // Background image (make sure to add R.drawable.academic_success_background in your resources)
         Image(
-            painter = painterResource(id = R.drawable.ic_spartan),
+            painter = painterResource(id = R.drawable.starbucks),
             contentDescription = "Catalog Header",
             contentScale = ContentScale.Crop,
             modifier = Modifier

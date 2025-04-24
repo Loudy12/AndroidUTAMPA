@@ -1,6 +1,6 @@
 package com.example.utampa.ui.theme.pages
 
-//import androidx.compose.material3.*
+
 import androidx.compose.runtime.Composable
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -228,28 +228,7 @@ val healthSafetyWidgets = listOf(
 //----------------- PREVIEWS ------------------
 //---------------------------------------------
 
-@Preview(showBackground = true)
-@Composable
-fun PreviewResourcesScreenContent() {
-    // Fake navController for preview
-    val navController = rememberNavController()
 
-    ResourcesScreenContent(navController = navController)
-}
-
-@Preview(showBackground = true)
-@Composable
-fun PreviewVerticalSectionWithWidgets() {
-    // Fake navController for preview
-    val navController = rememberNavController()
-
-    VerticalSectionWithWidgets(
-        sectionTitle = "Academics",
-        widgets = academicsWidgets,
-        searchQuery = "",
-        navController = navController
-    )
-}
 
 
 
