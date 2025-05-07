@@ -36,7 +36,8 @@ fun NewsCard(news: NewsItem) {
     Card(
         modifier = Modifier
             .padding(8.dp)
-            .width(220.dp),
+            .width(220.dp)
+            .height(200.dp),
         shape = RoundedCornerShape(12.dp),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
         elevation = CardDefaults.cardElevation(defaultElevation = 6.dp),
