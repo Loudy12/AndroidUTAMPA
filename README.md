@@ -1,6 +1,6 @@
 # AndroidUTAMPA
 
-##Auhtors
+## Authors
 Connor Loudermilk
 Abhigyan Tripathi
 Umung Gurung
